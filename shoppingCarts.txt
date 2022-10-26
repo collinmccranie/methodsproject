@@ -1,2 +1,2 @@
-cjm,The Great Gatsby,2
-reblane,Hamlet,1
+cjm,The Great Gatsby,2,
+reblane,Hamlet,1,
