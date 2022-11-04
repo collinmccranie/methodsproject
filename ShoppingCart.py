@@ -19,7 +19,7 @@ class ShoppingCart:
                     print("Shopping Cart:")
 
                     i = 0
-                    while i + 1 < len(tkns)
+                    while i + 1 < len(tkns):
                         print("Title: ", tkns[i], " , Amount: ", tkns[i + 1])
                         i += 2
 
@@ -41,12 +41,12 @@ class ShoppingCart:
         with open("shoppingCart.txt", "r") as f:
             lines = f.readlines()
 
-             for line in lines:
+            for line in lines:
                 tkns = line.split(",")
 
                 if tkns[0] == username:
                     i = 0
-                    while i + 1 < len(tkns)
+                    while i + 1 < len(tkns):
                         if tkns[i] == title:
                             tkns[i + 1] += num
                             exist = True
@@ -83,12 +83,12 @@ class ShoppingCart:
         with open("shoppingCart.txt", "r") as f:
             lines = f.readlines()
 
-             for line in lines:
+            for line in lines:
                 tkns = line.split(",")
 
                 if tkns[0] == username:
                     i = 0
-                    while i + 1 < len(tkns)
+                    while i + 1 < len(tkns):
                         if tkns[i] == title:
                             if tkns[i + 1] > num:
                                 tkns[i + 1] -= num
@@ -120,7 +120,7 @@ class ShoppingCart:
         with open("shoppingCarts.txt", "r") as f:
             lines = f.readlines()
 
-             for line in lines:
+            for line in lines:
                 tkns = line.split(",")
 
                 if tkns[0] == username:
@@ -137,7 +137,7 @@ class ShoppingCart:
         with open("orderHistory.txt", "r") as f:
             lines = f.readlines()
 
-             for line in lines:
+            for line in lines:
                 tkns = line.split(",")
 
                 if tkns[0] == username:
