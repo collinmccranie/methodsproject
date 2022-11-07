@@ -22,11 +22,11 @@ def shop_menu():
             cur_inventory.viewInventory()
 
         elif u_input == "2":
-            isbn_Input = input("What is the ISBN of the book? ")
+            isbn_input = input("What is the ISBN of the book? ")
             if cur_inventory.checkIfItemExists(isbn_input) == True:
                 numInput = input("How many of this book do you want? ")
                 if cur_inventory.checkStock(isbn_input, numInput) == True:
-                    cur_shoppingCart.AddItem(cur_customer.getCurrentUser(),isbn_input,numInput)
+                    cur_shoppingCart.addItem(cur_customer.getCurrentUser(),isbn_input,numInput)
                 else:
                     print("Not enough stock available.\n")
             else:
@@ -64,7 +64,7 @@ def cart_menu():
                 print("ISBN is not valid.\n")
 
         elif userinput == "3":
-            cur_shoppingCart.Checkout(cur_customer.getCurrentUser())
+            cur_shoppingCart.checkout(cur_customer.getCurrentUser())
 
         elif userinput == "4":
             return
@@ -168,7 +168,7 @@ def login_menu():
             shippingaddress = str(input("Enter your shipping address: "))
             cardnumber = str(input("Enter your card number for payment: "))
 
-            writeToFile = (name + "," + username + "," + password + "," + shippingaddress + "," + cardnumber + ",\n")
+            writeToFile = (full_name + "," + username + "," + password + "," + shippingaddress + "," + cardnumber + ",\n")
 
             write_to_file("user.txt", writeToFile)
 

@@ -14,16 +14,16 @@ class create_login_logout:
     def createAccount(name, username, password, shippingAddress, paymentInfo):
         new_user = user.user()
         new_user.setName(name)
-        new_user.setUsername(uastName)
+        new_user.setUsername(username)
         new_user.setPassword(password)
         new_user.setShippingAddress(shippingAddress)
         new_user.setPaymentInfo(paymentInfo)
 
         with open("shoppingCarts.txt", "a") as f:
-            f.write(UserName + ",\n")
+            f.write(username + ",\n")
 
         with open("orderHistory.txt", "a") as f:
-            f.write(UserName + ",\n")
+            f.write(username + ",\n")
 
         return new_user
 

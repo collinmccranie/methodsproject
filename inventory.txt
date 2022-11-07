@@ -1,5 +1,5 @@
-18392843,The Great Gatsby,F. Scott Fitzgerald,9.99,4,
-14538229,Moby Dick,Herman Melville,14.99,7,
-85439257,Ulysses,James Joyce,12.99,6,
-54384928,Hamlet,William Shakespeare,17.99,9,
-73843023,The Odyssey,Homer,11.99,8,
+18392843,The Great Gatsby,F. Scott Fitzgerald,9.99,4
+14538229,Moby Dick,Herman Melville,12.99,7
+85439257,Ulysses,James Joyce,12.99,6
+54384928,Hamlet,William Shakespeare,17.99,9
+73843023,The Odyssey,Homer,11.99,8
