@@ -108,6 +108,7 @@ class User:
                 if values[0] == username:
                     orderNum = 1
                     donePrinting = False
+                    # valueNum does nothing?
                     valueNum = 0
                     x = 1
                     while donePrinting == False:
@@ -115,8 +116,10 @@ class User:
                         print("Order number "+str(orderNum)+": \n")
                         orderNum += 1
                         moveOn = False
+
                         while moveOn == False:
-                            if x+i != len(values)-1:
+                            # changed from if x+i != len(values)-1 to fix crash
+                            if x+i != len(values):
                                 if values[x+i] != username:
                                     returnValue = inventory.getItemNameandPrice(values[i])
                                     print("Title: " + returnValue[1] + " -- " + returnValue[0] + "\n")
