@@ -2,6 +2,12 @@ import Inventory
 import create_login_logout
 
 class User:
+    
+    def __init__(self, name, password, shippingAddress, cardNumber):
+        self.Name = name
+        self.Pasword = password
+        self.ShippingAddress = shippingAddress
+        self.CardNumber = cardNumber
 
     def setName(self, name):
         self.Name = name
@@ -12,6 +18,8 @@ class User:
     def setShippingAddress(self, username, shippingAddress):
         userLine = 0
 
+        self.ShippingAddress = shippingAddress
+
         with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
@@ -20,7 +28,7 @@ class User:
                     newLine = ""
                     i = 0
                     for value in values:
-                        if i == 4:
+                        if i == 3:
                             newLine += shippingAddress + ","
                         else:
                             newLine += value + ","
@@ -45,15 +53,17 @@ class User:
     def setCardNumber(self, username, card):
         userLine = 0
 
+        self.CardNumber = card
+
         with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
                 values = line.split(",")
-                if values[2] == username:
+                if values[1] == username:
                     newLine = ""
                     i = 0
                     for value in values:
-                        if i == 5:
+                        if i == 4:
                             newLine += card + ","
                         else:
                             newLine += value + ","
