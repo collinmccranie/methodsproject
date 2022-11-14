@@ -2,6 +2,12 @@ import Inventory
 import create_login_logout
 
 class User:
+    
+    def __init__(self, name, password, shippingAddress, cardNumber):
+        self.Name = name
+        self.Pasword = password
+        self.ShippingAddress = shippingAddress
+        self.CardNumber = cardNumber
 
     def setName(self, name):
         self.Name = name
@@ -12,7 +18,9 @@ class User:
     def setShippingAddress(self, username, shippingAddress):
         userLine = 0
 
-        with open("customer.txt", "r") as f:
+        self.ShippingAddress = shippingAddress
+
+        with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
                 values = line.split(",")
@@ -20,15 +28,15 @@ class User:
                     newLine = ""
                     i = 0
                     for value in values:
-                        if i == 4:
+                        if i == 3:
                             newLine += shippingAddress + ","
                         else:
                             newLine += value + ","
                         i+=1
                     newLine = newLine[0:len(newLine)-2]+"\n"
-                    with open("customer.txt", "w") as file1:
+                    with open("user.txt", "w") as file1:
                         file1.write("")
-                    with open("customer.txt", "a") as file2:
+                    with open("user.txt", "a") as file2:
                         i = 0
                         for line in lines:
                             if i == userLine:
@@ -45,23 +53,25 @@ class User:
     def setCardNumber(self, username, card):
         userLine = 0
 
-        with open("customer.txt", "r") as f:
+        self.CardNumber = card
+
+        with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
                 values = line.split(",")
-                if values[2] == username:
+                if values[1] == username:
                     newLine = ""
                     i = 0
                     for value in values:
-                        if i == 5:
+                        if i == 4:
                             newLine += card + ","
                         else:
                             newLine += value + ","
                         i+=1
                     newLine = newLine[0:len(newLine)-2]+"\n"
-                    with open("customer.txt", "w") as f1:
+                    with open("user.txt", "w") as f1:
                         f1.write("")
-                    with open("customer.txt", "a") as f2:
+                    with open("user.txt", "a") as f2:
                         i = 0
                         for line in lines:
                             if i == userLine:
@@ -125,15 +135,15 @@ class User:
         elif choice == "y":
             userLine = 0
 
-            with open("customer.txt", "r") as f:
+            with open("user.txt", "r") as f:
                 done = False
                 lines = f.readlines()
                 for line in lines:
                     values = line.split(",")
                     if values[2] == username:
-                        with open("customer.txt", "w") as f1:
+                        with open("user.txt", "w") as f1:
                             f1.write("")
-                        with open("customer.txt", "a") as f2:
+                        with open("user.txt", "a") as f2:
                             i = 0
                             for line in lines:
                                 if i == userLine:

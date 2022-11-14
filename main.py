@@ -72,11 +72,24 @@ def cart_menu():
         else:
             print("Not a valid input")
 
-def account_menu():
-    cur_user = User.User()
+def account_menu():  
+    with open("user.txt", "r") as f:
+        lines = f.readlines()
+        for line in lines:
+            values = line.split(",")
+            if values[1] == cur_customer.getCurrentUser():
+                name = values[1]
+                password = values[2]
+                shippingAddress = values[3]
+                cardNumber = values[4]
+
+    cur_user = User.User(name, password, shippingAddress, cardNumber)
 
     while True:
+        print()
         print(cur_customer.getCurrentUser(), "'s Account:")
+        print("Address: ", cur_user.getShippingAddress())
+        print("Card Number: ", cur_user.getCardNumber(), "\n")
 
         print("Edit Shipping Info - 1")
         print("Edit Payment Info - 2")
@@ -108,7 +121,17 @@ def account_menu():
             print("Not a valid input")
 
 def store_menu():
-    cur_user = User.User()
+    with open("user.txt", "r") as f:
+        lines = f.readlines()
+        for line in lines:
+            values = line.split(",")
+            if values[1] == cur_customer.getCurrentUser():
+                name = values[1]
+                password = values[2]
+                shippingAddress = values[3]
+                cardNumber = values[4]
+
+    cur_user = User.User(name, password, shippingAddress, cardNumber)
 
     while True:
         print("\nWelcome", str(cur_customer.getCurrentUser()), "\n")
