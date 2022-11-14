@@ -12,7 +12,7 @@ class User:
     def setShippingAddress(self, username, shippingAddress):
         userLine = 0
 
-        with open("customer.txt", "r") as f:
+        with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
                 values = line.split(",")
@@ -26,9 +26,9 @@ class User:
                             newLine += value + ","
                         i+=1
                     newLine = newLine[0:len(newLine)-2]+"\n"
-                    with open("customer.txt", "w") as file1:
+                    with open("user.txt", "w") as file1:
                         file1.write("")
-                    with open("customer.txt", "a") as file2:
+                    with open("user.txt", "a") as file2:
                         i = 0
                         for line in lines:
                             if i == userLine:
@@ -45,7 +45,7 @@ class User:
     def setCardNumber(self, username, card):
         userLine = 0
 
-        with open("customer.txt", "r") as f:
+        with open("user.txt", "r") as f:
             lines = f.readlines()
             for line in lines:
                 values = line.split(",")
@@ -59,9 +59,9 @@ class User:
                             newLine += value + ","
                         i+=1
                     newLine = newLine[0:len(newLine)-2]+"\n"
-                    with open("customer.txt", "w") as f1:
+                    with open("user.txt", "w") as f1:
                         f1.write("")
-                    with open("customer.txt", "a") as f2:
+                    with open("user.txt", "a") as f2:
                         i = 0
                         for line in lines:
                             if i == userLine:
@@ -125,15 +125,15 @@ class User:
         elif choice == "y":
             userLine = 0
 
-            with open("customer.txt", "r") as f:
+            with open("user.txt", "r") as f:
                 done = False
                 lines = f.readlines()
                 for line in lines:
                     values = line.split(",")
                     if values[2] == username:
-                        with open("customer.txt", "w") as f1:
+                        with open("user.txt", "w") as f1:
                             f1.write("")
-                        with open("customer.txt", "a") as f2:
+                        with open("user.txt", "a") as f2:
                             i = 0
                             for line in lines:
                                 if i == userLine:
