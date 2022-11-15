@@ -78,12 +78,13 @@ def account_menu():
         for line in lines:
             values = line.split(",")
             if values[1] == cur_customer.getCurrentUser():
-                name = values[1]
+                name = values[0]
+                username = values[1]
                 password = values[2]
                 shippingAddress = values[3]
                 cardNumber = values[4]
 
-    cur_user = User.User(name, password, shippingAddress, cardNumber)
+    cur_user = User.User(name, username, password, shippingAddress, cardNumber)
 
     while True:
         print()
@@ -126,12 +127,13 @@ def store_menu():
         for line in lines:
             values = line.split(",")
             if values[1] == cur_customer.getCurrentUser():
-                name = values[1]
+                name = values[0]
+                username = values[1]
                 password = values[2]
                 shippingAddress = values[3]
                 cardNumber = values[4]
 
-    cur_user = User.User(name, password, shippingAddress, cardNumber)
+    cur_user = User.User(name, username, password, shippingAddress, cardNumber)
 
     while True:
         print("\nWelcome", str(cur_customer.getCurrentUser()), "\n")

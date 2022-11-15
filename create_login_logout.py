@@ -12,12 +12,7 @@ class create_login_logout:
         return self.cur_customer
 
     def createAccount(name, username, password, shippingAddress, paymentInfo):
-        new_user = user.user()
-        new_user.setName(name)
-        new_user.setUsername(username)
-        new_user.setPassword(password)
-        new_user.setShippingAddress(shippingAddress)
-        new_user.setPaymentInfo(paymentInfo)
+        new_user = User.User(name, username, password, shippingAddress, paymentInfo)
 
         with open("shoppingCarts.txt", "a") as f:
             f.write(username + ",\n")

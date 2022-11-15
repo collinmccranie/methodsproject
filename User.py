@@ -3,8 +3,9 @@ import create_login_logout
 
 class User:
     
-    def __init__(self, name, password, shippingAddress, cardNumber):
+    def __init__(self, name, username, password, shippingAddress, cardNumber):
         self.Name = name
+        self.Username = username
         self.Pasword = password
         self.ShippingAddress = shippingAddress
         self.CardNumber = cardNumber
