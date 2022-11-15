@@ -126,6 +126,8 @@ class ShoppingCart:
             for line in lines:
                 values = line.split(",")
                 if values[0] == username:
+                    # create new line without username
+                    cart_noUser = values[1] + "," + values[2] + ",\n"
                     cart += line
                     skip = False
                     i = 0
@@ -146,7 +148,8 @@ class ShoppingCart:
             for line in lines:
                 values = line.split(",")
                 if values[0] == username:
-                    newLine = line[0:len(line)-1] + cart
+                    # changed from newLine = line[0:len(line)-1] + cart
+                    newLine = line[0:len(line)-1] + cart_noUser
                     newLine = newLine[0:len(newLine)-1]+"\n"
                     with open("orderHistory.txt", "w") as f1:
                         f1.write("")
