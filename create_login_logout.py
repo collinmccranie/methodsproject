@@ -24,24 +24,24 @@ class create_login_logout:
 
 
     def login(self):
-        username = input("Enter username: ")
-
         with open("user.txt", 'r') as f:
-            
+            i = 0
+            lines = f.readlines()
+
             while True:
-                try:
-                    lines = f.readline()
-                    currentline = lines.split(",")
-                    if currentline[1] == username:
+                username = input("Enter username: ")
+                for line in lines:
+                    values = line.split(",")
+                    if (values[1] == username):
                         password = input("Enter Password: ")
-                        if currentline[2] == password:
+                        if values[2] == password:
                             self.cur_customer = username
                             return
-                    
-                        else: 
-                            print("Incorrect Username or Password. ")
-                except IndexError:
-                    return 0
+                if i == 2:
+                    return
+                else:
+                    print("Invalid Username or Password. ", 2 - i, " More Attempts.")
+                    i = i + 1
 
     def logout():
         print("Logged out successfully")

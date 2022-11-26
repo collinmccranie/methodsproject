@@ -14,7 +14,6 @@ def shop_menu():
         print("\nView Inventory - 1")
         print("Add Item to Cart - 2")
         print("Go Back - 3")
-        print("Exit Program - 4")
 
         u_input = input("Choose from the options 1, 2, 3, 4: ")
 
@@ -34,9 +33,6 @@ def shop_menu():
 
         elif u_input == "3":
             return
-
-        elif u_input == "4":
-            return 0
 
         else:
             print("Not a valid input")
@@ -207,7 +203,7 @@ def login_menu():
             print("Account Created! Logged in as " + cur_customer.getCurrentUser() + '\n')
             
             store_menu()
-
+            return
 
         elif u_input == '3':
             print("Exiting Program...")
